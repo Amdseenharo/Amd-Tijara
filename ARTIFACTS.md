@@ -3,7 +3,7 @@
 This document explains what "artifacts" are in Claude Code and how to create, publish, and share them from a session.
 
 ## What is an artifact?
-An artifact is a single static HTML or Markdown page that Claude Code publishes from your session to a private URL on claude.ai. The page can be interactive (HTML/CSS/JS inlined) and updates in place whenever the author republishes it.
+An artifact is a single static HTML or Markdown page that Claude Code publishes from your session to a private URL on claude.ai. The page can be interactive (HTML/CSS/JS inlined) and updates in pla[...]
 
 Key points:
 - Single file only: `.html`, `.htm`, or `.md`.
@@ -33,7 +33,7 @@ Do not use an artifact for a full hosted app or anything requiring a backend, au
 ## Using live data (connectors)
 - If you want the artifact to fetch fresh data when a viewer opens it, tell Claude which connector to use in your prompt (for example, GitHub connector).
 - When a viewer opens a connector-backed artifact, the page's connector calls run under the viewer's own connector account—so different viewers may see different data.
-- The viewer must approve connector calls the first time; if they decline or lack a connector, the live sections remain empty. Include fallback text in those sections naming the connector required.
+- The viewer must approve connector calls the first time; if they decline or lack a connector, the live sections remain empty. Include fallback text in those sections naming the connector required[...]
 - Connector-backed artifacts cannot be shared publicly. They stay private to the publishing user or to organization members (depending on plan and settings).
 
 ## Sharing & collaboration
@@ -50,16 +50,20 @@ Do not use an artifact for a full hosted app or anything requiring a backend, au
 ## Example prompts
 - Annotated PR diff
 
-  "Make an artifact that walks through PR #<PR_NUMBER> in this repository. Render the diff with inline annotations: for each changed hunk show a margin note with (a) purpose of change, (b) potential risks/side-effects, (c) suggested follow-ups. Color-code by severity (red/orange/green). Publish and open the private URL."
+  "Make an artifact that walks through PR #<PR_NUMBER> in this repository. Render the diff with inline annotations: for each changed hunk show a margin note with (a) purpose of change, (b) potenti[...]
 
 - Dashboard with live data
 
-  "Build an artifact dashboard of last week's deploy failures by service. Pull the live list through my GitHub connector when the page loads and include a refresh button. Include a fallback message that says 'Connect GitHub to see live data.'"
+  "Build an artifact dashboard of last week's deploy failures by service. Pull the live list through my GitHub connector when the page loads and include a refresh button. Include a fallback messag[...]
 
 ## Troubleshooting
 - "Claude cannot publish": verify you are signed in and your plan/features allow artifacts; check the Claude Code version.
 - Live sections empty for viewers: they may need to connect the connector, or they denied permission, or org admin disabled connector calls.
 - Publish fails due to size: reduce embedded images, prefer SVG, or summarize large datasets rather than embedding them in full.
+
+## Shared artifacts
+- Public/Share link added by user on 2026-08-15:
+  - https://claude.ai/public/artifacts/ef7ab2e5-be31-419e-b76d-675942ec5107  — Shared artifact URL provided by repository owner.
 
 ---
 File created and maintained as a local guide to using Claude Code artifacts.
